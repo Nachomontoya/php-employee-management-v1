@@ -9,6 +9,13 @@ switch ($method) {
     // var_dump($_POST);
     $newEmployee = $_POST;
     echo addEmployee($newEmployee);
+    break;
+
+   case 'GET':
+    //echo var_dump($_GET);
+    $idEmployee = $_GET['ID'];
+    getEmployee($idEmployee);
+    break;
 }
 
 ?>
