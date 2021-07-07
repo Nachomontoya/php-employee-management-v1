@@ -1,4 +1,9 @@
 <!-- TODO Employee view -->
+<?php
+require_once('./library/sessionHelper.php');
+checkExpiredSession();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
