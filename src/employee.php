@@ -69,7 +69,7 @@
           </div>
         </div>
       </div>
-      <button type="btn" class="btn btn-secondary">Back</button>
+      <a type="btn" class="btn btn-secondary" href="dashboard.php">Back</a>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </main>
