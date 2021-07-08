@@ -36,12 +36,10 @@
   <script src="../node_modules/jsgrid/src/fields/jsgrid.field.control.js"></script>
 </head>
 
-<body><?php
-checkExpiredSession();
-?>
-  <header class="bg-light mb-4">
+<body>
+  <header class="bg-light mb-4 ">
     <?php 
-      require ("../assets/html/header.html");
+      require_once("../assets/html/header.html");
     ?>
   </header>
   <main class="container-xl mx-auto">
