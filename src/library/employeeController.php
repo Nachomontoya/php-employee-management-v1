@@ -1,19 +1,20 @@
 <?php
 require("./employeeManager.php");
 $method = $_SERVER['REQUEST_METHOD'];
+$path = "../../resources/employees.json";
 
-header("Content-Type: application/json");
 
 switch ($method) {
   case "POST":
     if($_GET["update"] == true){
       updateEmployee($_SESSION['employeeUpdate'],$_POST);
+      break;
     }else{
-      // var_dump($_POST);
       $newEmployee = $_POST;
-      echo addEmployee($newEmployee);
+      $result = addEmployee($newEmployee);
+      break;
     }
-    break;
+    
 
   case 'GET':
     if($_GET["ID"]){
@@ -24,9 +25,11 @@ switch ($method) {
 
   case "DELETE":
     parse_str(file_get_contents("php://input"), $_DELETE);
-    $employeeID = $_DELETE['id']; //This is the id of the employee clicked on.
-    var_dump(deleteEmployee($employeeID));
-
-
+    $employeeID = $_DELETE['id'];
+    $result = deleteEmployee($employeeID);
+    break;
 }
+
+header("Content-Type: application/json");
+echo json_encode($result);
 ?>

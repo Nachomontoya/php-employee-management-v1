@@ -1,11 +1,10 @@
 const dataPath = "../resources/employees.json";
 
-async function getEmployees(dataPath) {
-  let result = await $.getJSON(dataPath);
+$.getJSON(dataPath).done(function (employeesData) {
   $("#jsGrid").jsGrid({
+    data: employeesData,
     width: "100%",
     height: "auto",
-    // paging: true,
     inserting: true,
     editing: false,
     sorting: true,
@@ -38,7 +37,6 @@ async function getEmployees(dataPath) {
       },
     },
 
-    data: result,
     fields: [
       { name: "id", type: "hidden", visible: false, width: 15 },
       {
@@ -108,6 +106,4 @@ async function getEmployees(dataPath) {
       { type: "control", editButton: false },
     ],
   });
-}
-
-getEmployees(dataPath);
+});
