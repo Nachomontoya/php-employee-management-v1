@@ -1,5 +1,6 @@
 <!-- TODO Employee view -->
 <?php
+session_start();
 require_once('./library/sessionHelper.php');
 checkExpiredSession();
 ?>

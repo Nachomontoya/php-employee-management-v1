@@ -1,10 +1,10 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
 <?php
-  require_once('./library/sessionHelper.php');
-  checkExpiredSession();
+  
 
   session_start();
-
+  require_once('./library/sessionHelper.php');
+  checkExpiredSession();
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,9 @@
   <script src="../node_modules/jsgrid/src/fields/jsgrid.field.control.js"></script>
 </head>
 
-<body>
+<body><?php
+checkExpiredSession();
+?>
   <header class="bg-light mb-4">
     <?php 
       require ("../assets/html/header.html");
