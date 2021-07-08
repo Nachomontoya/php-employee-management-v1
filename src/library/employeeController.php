@@ -6,15 +6,16 @@ $path = "../../resources/employees.json";
 
 switch ($method) {
   case "POST":
-    if($_GET["update"] == true){
-      updateEmployee($_SESSION['employeeUpdate'],$_POST);
-      break;
-    }else{
+    if(!isset($_GET['update'])){
       $newEmployee = $_POST;
       $result = addEmployee($newEmployee);
       break;
     }
-    
+    if($_GET["update"] == true){
+      updateEmployee($_SESSION['employeeUpdate'],$_POST);
+      break;
+    }
+    break;
 
   case 'GET':
     if($_GET["ID"]){
