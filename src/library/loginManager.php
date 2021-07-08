@@ -27,6 +27,6 @@ function login($a, $b){
 }
 
 function logOut(){
-     header("Location: ../index.php");
+     destroySessions();
      exit();
 }

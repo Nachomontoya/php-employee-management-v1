@@ -8,9 +8,6 @@ if(isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['pwd']) && 
 }
 
 if(isset($_GET['logOut'])){
-     require_once('sessionHelper.php');
-     destroySessions();
+     logOut();
 }
-
 ?>
-

@@ -1,15 +1,16 @@
 <?PHP
-session_start();
-if ($_GET["destroyUpdate"] == true){
-     echo "En teoria entro y debo vaciar la sesion";
+if(!isset($_SESSION)){
+     session_start();
+}
+if (isset($_GET["destroyUpdate"]) && $_GET["destroyUpdate"] == true){
      unset($_SESSION["employeeUpdate"]);
      header("Location: ../employee.php");
 }
 
 function destroySessions(){
+     $base_url = $_SESSION['BASE_URL'];
      session_destroy();
-     require_once('loginManager.php');
-     logOut();
+     header('Location: '.$base_url.'/index.php');
 }
 
 function checkExpiredSession(){
@@ -19,7 +20,7 @@ function checkExpiredSession(){
           //$sessionTTL = $_SESSION["timeout"] + 3000;
           $sessionTimeForAlfonso = time() - $_SESSION["timeout"];
           //echo $_SESSION["timeout"];
-          if($sessionTimeForAlfonso >60){
+          if($sessionTimeForAlfonso >10){
                destroySessions();
           }
      }
