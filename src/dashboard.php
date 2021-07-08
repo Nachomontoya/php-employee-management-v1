@@ -5,6 +5,9 @@
   session_start();
   require_once('./library/sessionHelper.php');
   checkExpiredSession();
+  if(!isset($_SESSION)){
+    header("Location : ../index.php");
+  }
 
 ?>
 <!DOCTYPE html>
