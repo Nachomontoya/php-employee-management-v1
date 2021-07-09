@@ -1,10 +1,4 @@
 <!-- TODO Application entry point. Login view -->
-<?php
-if(!isset($_SESSION)){
-  session_start();
-  $_SESSION['BASE_URL']= 'http://localhost/Assembler/php-employee-management-v1';
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

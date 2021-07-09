@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+     session_start();
+}
 require_once('sessionHelper.php');
 function login($a, $b){
      $data = file_get_contents("../../resources/users.json");
