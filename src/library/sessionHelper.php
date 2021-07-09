@@ -5,6 +5,7 @@ if(!isset($_SESSION)){
 }
 if (isset($_GET["destroyUpdate"]) && $_GET["destroyUpdate"] == true){
      unset($_SESSION["employeeUpdate"]);
+     unset($_SESSION['newEmployee']);
      header("Location: ../employee.php");
 }
 
